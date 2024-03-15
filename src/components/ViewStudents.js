@@ -6,7 +6,7 @@ import { Container, Row, Col, Form, InputGroup, Button } from 'react-bootstrap';
 const ViewStudents = () => {
   const [students, setStudents] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [filter, setFilter] = useState('all'); // 'all', 'withMarks', 'withoutMarks'
+  const [filter, setFilter] = useState('all');
 
   useEffect(() => {
     fetchStudents();
@@ -14,7 +14,7 @@ const ViewStudents = () => {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/students');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/students`);
       setStudents(response.data);
     } catch (error) {
       console.error('Error fetching students:', error);
@@ -23,8 +23,8 @@ const ViewStudents = () => {
 
   const handleDelete = async (rollNo) => {
     try {
-      await axios.delete(`http://localhost:5000/delete-student/${rollNo}`);
-      fetchStudents(); // Refresh the students list to reflect the deletion
+      await axios.delete(`${process.env.REACT_APP_API_URL}/delete-student/${rollNo}`);
+      fetchStudents(); 
     } catch (error) {
       console.error('Error deleting student:', error);
       alert('Failed to delete student');
@@ -33,10 +33,10 @@ const ViewStudents = () => {
 
   const onLockMarks = async (rollNo) => {
     try {
-      const response = await axios.post(`http://localhost:5000/lock-marks/${rollNo}`);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/lock-marks/${rollNo}`);
       if (response.data) {
         alert('Marks locked successfully!');
-        fetchStudents(); // Refresh the students list to reflect the locked status
+        fetchStudents(); 
       }
     } catch (error) {
       console.error('Error locking marks:', error);

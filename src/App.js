@@ -5,7 +5,7 @@ import AddStudentPage from './components/AddStudentPage';
 import ViewStudents from './components/ViewStudents';
 import AddMarks from './components/AddMarks';
 import GenerateReport from './components/GenerateReport';
-import Analysis from './components/Analysis'; // Import the Analysis componen
+import Analysis from './components/Analysis'; 
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/view-students" element={<ViewStudents />} />
         <Route path="/add-marks" element={<AddMarks />} />
         <Route path="/generate-report" element={<GenerateReport />} />
-        <Route path="/analysis" element={<Analysis />} /> {/* Add the route for Analysis */}
+        <Route path="/analysis" element={<Analysis />} /> 
       </Routes>
     </Layout>
   );

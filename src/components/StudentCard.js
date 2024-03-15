@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Button, Badge } from 'react-bootstrap';
-import logo from './logo.png'; // Ensure the path is correct
-import './StudentCard.css'; // Import the CSS file here
+import logo from './logo.png'; 
+import './StudentCard.css'; 
 
 const StudentCard = ({ student, onDelete, onLockMarks }) => {
   const areMarksComplete = student.Ideation !== null && student.Execution !== null && student.Viva !== null;

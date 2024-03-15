@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Form, Button, Container, Card, Alert } from 'react-bootstrap';
-import './AddMarks.css'; // Make sure to create and import your CSS file
+import './AddMarks.css'; 
 
 function AddMarks() {
-  // useState hooks and the handleSubmit function implementation remains the same
+
   const [rollNumber, setRollNumber] = useState('');
   const [ideationScore, setIdeationScore] = useState('');
   const [executionScore, setExecutionScore] = useState('');
@@ -69,10 +69,10 @@ function AddMarks() {
     <Container className="d-flex justify-content-center align-items-center vh-100 container-custom">
       <Card className="card-custom">
         <Card.Body className="card-body-custom">
-          <h3 className="text-center title-custom">Add Marks</h3>
+          <h3 className="text-center title-custom">Add or Update Marks</h3>
           {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
           <Form onSubmit={handleSubmit}>
-            {/* Roll Number */}
+
             <Form.Group className="mb-3">
               <Form.Label className="label-custom">Roll Number</Form.Label>
               <Form.Control
@@ -84,7 +84,7 @@ function AddMarks() {
                 required
               />
             </Form.Group>
-            {/* Ideation Score */}
+
             <Form.Group className="mb-3">
               <Form.Label className="label-custom">Ideation Score</Form.Label>
               <Form.Control 
@@ -94,7 +94,7 @@ function AddMarks() {
                 onChange={(e) => setIdeationScore(e.target.value)} 
                 placeholder="0-10" />
             </Form.Group>
-            {/* Execution Score */}
+
             <Form.Group className="mb-3">
               <Form.Label className="label-custom">Execution Score</Form.Label>
               <Form.Control 
@@ -104,7 +104,7 @@ function AddMarks() {
                 onChange={(e) => setExecutionScore(e.target.value)} 
                 placeholder="0-10" />
             </Form.Group>
-            {/* Viva Score */}
+ 
             <Form.Group className="mb-3">
               <Form.Label className="label-custom">Viva Score</Form.Label>
               <Form.Control 

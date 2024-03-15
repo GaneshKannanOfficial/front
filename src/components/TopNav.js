@@ -7,7 +7,6 @@ const TopNav = () => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg" style={{ marginBottom: '20px', padding: '10px 0' }}>
       <Container>
-        {/* Evaluation Dashboard at the left */}
         <Navbar.Brand as={Link} to="/" className="me-auto text-white d-flex align-items-center">
           <FaChartLine className="me-2" />Evaluation Dashboard
         </Navbar.Brand>
@@ -15,11 +14,9 @@ const TopNav = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center">
-            {/* Home link with icon */}
             <Nav.Link as={Link} to="/" className="text-white d-flex align-items-center me-3">
               <FaHome className="me-2" />Home
             </Nav.Link>
-            {/* User icon with name */}
             <Nav.Link className="text-white d-flex align-items-center">
               <FaUserCircle className="me-2" />Ganesh
             </Nav.Link>
